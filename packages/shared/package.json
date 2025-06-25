@@ -1,0 +1,26 @@
+{
+  "name": "@bible/shared",
+  "version": "1.0.0",
+  "description": "Shared components, types, and utilities for Bible app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "zustand": "^4.4.1",
+    "date-fns": "^2.30.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.4",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  }
+}
