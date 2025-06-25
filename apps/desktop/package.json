@@ -1,0 +1,76 @@
+{
+  "name": "bible-desktop",
+  "version": "1.0.0",
+  "description": "Desktop Bible application built with Electron",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run build:watch\" \"npm run electron:dev\"",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "electron:dev": "wait-on dist/main.js && electron .",
+    "electron:pack": "electron-builder",
+    "electron:dist": "npm run build && electron-builder",
+    "clean": "rimraf dist",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@bible/shared": "^1.0.0",
+    "@bible/parser": "^1.0.0",
+    "@bible/database": "^1.0.0",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "concurrently": "^8.2.1",
+    "electron": "^26.2.1",
+    "electron-builder": "^24.6.4",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2",
+    "wait-on": "^7.0.1"
+  },
+  "build": {
+    "appId": "com.bibleapp.desktop",
+    "productName": "Bible App",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.reference",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "GinHouPh",
+      "repo": "bible"
+    }
+  },
+  "author": "GinHouPh",
+  "license": "MIT"
+}

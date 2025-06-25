@@ -1,0 +1,20 @@
+{
+  "name": "@bible/parser",
+  "version": "1.0.0",
+  "description": "USFM parser for Bible data",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@bible/shared": "^1.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  }
+}

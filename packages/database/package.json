@@ -1,0 +1,22 @@
+{
+  "name": "@bible/database",
+  "version": "1.0.0",
+  "description": "Database abstraction layer for Bible app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@bible/shared": "^1.0.0",
+    "sql.js": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/sql.js": "^1.4.4",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  }
+}
